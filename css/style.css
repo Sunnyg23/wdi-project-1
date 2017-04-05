@@ -1,7 +1,154 @@
-body  {
-  background: blue;
+div.container {
+    width: 50%;
+    border: 1px solid grey;
+
+}
+h1,p,h2 {
+  font-family: 'Crafty Girls', cursive;
+  font-size: 20px;
 }
 
-h1  {
-  color:  white;
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #00bca2;
+    clear: left;
+    text-align: center;
+    width: 1620px;
+    border: 5px solid #ff00e4;
+    font-family: 'Crafty Girls', cursive;
+
+
+}
+
+form {
+
+  background-color: black;
+  font-family: 'Crafty Girls', cursive;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav start,startAgain,highscores {
+    list-style-type: none;
+    padding: 0;
+    color:  black;
+    background-color: yellow;
+    font-family: 'Crafty Girls', cursive;
+
+}
+
+nav  {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    text-align: left;
+    padding: 1em;
+    overflow: hidden;
+    font-family: 'Crafty Girls', cursive;
+}
+
+.grid {
+
+  border: 5px solid black;
+  width:  120px;
+  height: 120px;
+  border-radius:  60px;
+  margin: 20px;
+  display: inline-block;
+  font-size: 100px;
+  font-family: 'Crafty Girls', cursive;
+  text-align:center;
+}
+.message  {
+  border: 5px solid #ff00e4;
+  width:  300px;
+  height: 90px;
+  border-radius:  8px;
+  margin: 20px;
+  display: inline-block;
+  font-size: 50px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-family: 'Crafty Girls', cursive;
+
+}
+
+#gameboard  {
+
+  width: 91%;
+  border: 5px solid black;
+}
+
+#start, #startAgain, #highscores {
+  background-color: #ff00e4;
+  border: 5px solid #00bca2;
+  color: #FFFFFF;
+  width: 144px;
+  padding: 10px;
+  border-radius: 20px;
+  font-family: 'Crafty Girls', cursive;
+  margin: 20px;
+
+}
+
+input,label {
+  background-color: #ff00e4;
+  border: 2px solid #00bca2;
+  color: #FFFFFF;
+  width: 100px;
+  padding: 5px;
+  border-radius: 20px;
+  font-family: 'Crafty Girls', cursive;
+  margin: 10px;
+
+
+}
+
+
+#timer, #watch {
+  background-color: #ff00e4;
+  border-radius: 200px;
+  height: 200px;
+  width: 200px;
+  position: relative;
+  margin: 40px auto;
+}
+
+#timer button, #watch button {
+  width: 30px;
+  height: 15px;
+  border: solid;
+  position: absolute;
+  top: 5px;
+  cursor: pointer;
+  outline: none;
+}
+.screen {
+  width: 154px;
+  height: 42px;
+  background-color: #00bca2;
+  border-radius: 4px;
+  margin: auto;
+  position: relative;
+  top: 75px;
+  text-align: right;
+  font-family: 'Crafty Girls', cursive;
+  color: #fff;
+  line-height: 42px;
+  font-size: 32px;
+  padding: 5px 8px;
+}
+
+#timer .screen {
+  text-align: center;
 }

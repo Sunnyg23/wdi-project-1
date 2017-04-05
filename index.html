@@ -2,11 +2,78 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <title>WDI Project 1</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="js/app.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Butterfly+Kids" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Crafty+Girls" rel="stylesheet">
+
   </head>
   <body>
-<h1>WDI Project 1</h1>
+
+  <div class="container">
+
+  <header>
+     <h1>Colour Game</h1>
+  </header>
+
+  <nav>
+
+<label for="Nickname">First Name</label><br><br>
+<input type="text" placeholder="eg.Tom" id="nickname"><br><br><br>
+
+<label for="email">Email</label><br><br>
+<input type="text"  placeholder="example@email.com"><br>
+
+<input type="submit"><br><br>
+
+
+<button id = "start">Start</button><br>
+<button id = "startAgain">Reset</button><br>
+<button id = "highscores">Highscores</button><br>
+
+
+  </nav>
+</div>
+  <article>
+    <h2> Rules of the Game</h2>
+    <ul>
+      <li>1. Press Start</li>
+      <li>2. Be Patient :)</li>
+      <li>3. Look inside the DDaaaarrrrkkkkk box!!!!!</li>
+      <li>4. When you see the colour name, hit the right numbers as fast as you possibly can! </li>
+      <li>5. As soon as you do, the timer will stop!  the faster you are the better your score will be! </li>
+      <li>6. But be careful, as if you run out of time you will lose the game. :(  </li>
+      <li>7. Good luck :)</li>
+    </ul>
+    <!-- <p>In this game, you will begin by first pressing the start button.  You will then be timed on how quickly you can identify the correct colours in each circle, by clicking on them.  For every round you get right a score will be given to you.  By the end pf the game you must have over 15 points to win.  Good Luck :) </p>
+    <p>To reset and start again, just hit the RESET button on the left.  To check the lastest highscore , just hit the HIGHSCORE button on the left.  </p> -->
+  </article>
+  <article>
+
+<div id = "gameboard">
+    <li class = "grid" id="49">1</li>
+    <li class = "grid" id="50">2</li>
+    <li class = "grid" id="51">3</li>
+    <li class = "grid" id="52">4</li>
+    <li class = "grid" id="53">5</li>
+    <li class = "grid" id="54">6</li>
+    <li class = "grid" id="55">7</li>
+    <li class = "grid" id="56">8</li>
+    <li class = "message">Press Start</li>
+
+    <div id="timer">
+        <!-- <button id="reset"></button> -->
+        <button id="startStop"></button>
+        <div class="screen">10</div>
+      </div>
+
+
+  </article>
+
+  <footer>Copyright &copy; S23NYG</footer>
+
+
+
   </body>
-</html>
+  </html>
