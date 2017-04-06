@@ -1,154 +1,228 @@
-div.container {
-    width: 50%;
-    border: 1px solid grey;
-
+/*
+h1 {
+font-family: 'Crafty Girls', cursive;
+font-size: 50px;
+text-align: right;
 }
-h1,p,h2 {
-  font-family: 'Crafty Girls', cursive;
-  font-size: 20px;
-}
-
 
 header, footer {
-    padding: 1em;
-    color: white;
-    background-color: #00bca2;
-    clear: left;
-    text-align: center;
-    width: 1620px;
-    border: 5px solid #ff00e4;
-    font-family: 'Crafty Girls', cursive;
-
-
+padding: 1em;
+color: white;
+background-color: #00bca2;
+clear: left;
+text-align: center;
+width: 100%auto;
+border: 15px groove #ff00e4;
+font-family: 'Crafty Girls', cursive;
+border-style: ;
 }
-
-form {
-
-  background-color: black;
-  font-family: 'Crafty Girls', cursive;
-}
-
-nav {
-    float: left;
-    max-width: 160px;
-    margin: 0;
-    padding: 1em;
-}
-
-nav start,startAgain,highscores {
-    list-style-type: none;
-    padding: 0;
-    color:  black;
-    background-color: yellow;
-    font-family: 'Crafty Girls', cursive;
-
-}
-
-nav  {
-    text-decoration: none;
-}
-
-article {
-    margin-left: 170px;
-    text-align: left;
-    padding: 1em;
-    overflow: hidden;
-    font-family: 'Crafty Girls', cursive;
-}
-
 .grid {
 
-  border: 5px solid black;
-  width:  120px;
-  height: 120px;
-  border-radius:  60px;
-  margin: 20px;
-  display: inline-block;
-  font-size: 100px;
-  font-family: 'Crafty Girls', cursive;
-  text-align:center;
+border: 5px solid black;
+width:  120px;
+height: 120px;
+border-radius:  60px;
+margin: 20px;
+display: inline-block;
+font-size: 100px;
+font-family: 'Crafty Girls', cursive;
+text-align:center;
 }
 .message  {
-  border: 5px solid #ff00e4;
-  width:  300px;
-  height: 90px;
-  border-radius:  8px;
-  margin: 20px;
-  display: inline-block;
-  font-size: 50px;
-  background-color: black;
-  color: white;
-  text-align: center;
-  font-family: 'Crafty Girls', cursive;
-
+border: 5px solid #ff00e4;
+width:  300px;
+height: 90px;
+border-radius:  8px;
+margin: 20px;
+display: inline-block;
+font-size: 50px;
+background-color: black;
+color: white;
+text-align: center;
+font-family: 'Crafty Girls', cursive;
 }
-
 #gameboard  {
-
-  width: 91%;
-  border: 5px solid black;
+width: 100%;
+border: 5px solid black;
+padding: 10px;
+margin: 20px;
 }
 
-#start, #startAgain, #highscores {
-  background-color: #ff00e4;
-  border: 5px solid #00bca2;
-  color: #FFFFFF;
-  width: 144px;
-  padding: 10px;
-  border-radius: 20px;
-  font-family: 'Crafty Girls', cursive;
-  margin: 20px;
+#start,#startagain{
+background-color: #ff00e4;
+border: 5px solid #00bca2;
+color: #FFFFFF;
+width: 144px;
+padding: 10px;
+border-radius: 20px;
+font-family: 'Crafty Girls', cursive;
+margin: 20px;
 
 }
 
 input,label {
-  background-color: #ff00e4;
-  border: 2px solid #00bca2;
-  color: #FFFFFF;
-  width: 100px;
-  padding: 5px;
-  border-radius: 20px;
-  font-family: 'Crafty Girls', cursive;
-  margin: 10px;
+background-color: #ff00e4;
+border: 2px solid #00bca2;
+color: #FFFFFF;
+width: 100px;
+padding: 5px;
+border-radius: 20px;
+font-family: 'Crafty Girls', cursive;
+margin: 10px;
 
 
 }
 
 
 #timer, #watch {
-  background-color: #ff00e4;
-  border-radius: 200px;
-  height: 200px;
-  width: 200px;
-  position: relative;
-  margin: 40px auto;
+background-color: #ff00e4;
+border-radius: 200px;
+height: 200px;
+width: 200px;
+position: relative;
+margin: 40px auto;
 }
-
 #timer button, #watch button {
-  width: 30px;
-  height: 15px;
-  border: solid;
-  position: absolute;
-  top: 5px;
-  cursor: pointer;
-  outline: none;
+width: 30px;
+height: 15px;
+border: solid;
+position: absolute;
+top: 5px;
+cursor: pointer;
+outline: none;
 }
 .screen {
-  width: 154px;
-  height: 42px;
-  background-color: #00bca2;
-  border-radius: 4px;
-  margin: auto;
-  position: relative;
-  top: 75px;
-  text-align: right;
-  font-family: 'Crafty Girls', cursive;
-  color: #fff;
-  line-height: 42px;
-  font-size: 32px;
-  padding: 5px 8px;
+width: 154px;
+height: 42px;
+background-color: #00bca2;
+border-radius: 4px;
+margin: auto;
+position: relative;
+top: 75px;
+text-align: right;
+font-family: 'Crafty Girls', cursive;
+color: #fff;
+line-height: 42px;
+font-size: 32px;
+padding: 5px 8px;
 }
 
 #timer .screen {
+text-align: center;
+}
+
+.gameboard {
+width: 50px;
+height: 50px;
+background-color: red;
+margin: 2px;
+display: inline-block;
+}
+
+.gameboard{
+border: 1px solid green;
+}
+
+.container1{
+width: 250px;
+border: 1px solid blue;
+padding: 5px;
+}*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background: #fafafa;
+}
+
+main {
+  margin: 0 auto;
+  width: 450px;
+  height: 800px;
+  background: #ccc;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  padding: 0;
+  font-size: 70px;
+  margin: 10px;
+  letter-spacing: -3px;
+}
+
+div.container {
+  /*background: blue;*/
+  width: 100%;
+  height: 595px;
+}
+
+div.container div.topbar, div.messages {
+  background: #ccc;
+  height: 60px;
+  font-weight: 700;
+}
+
+div.messages {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 900;
+}
+
+div.messages div.screen {
+  margin: 0 auto;
+  background: #f2b179;
+  width: 98%;
+  height: 56px;
+  color: #fff;
+  border-radius: 5px;
+  border: 3px solid #CC864A;
+}
+
+div.topbar div {
+  display: inline-block;
+  width: 147px;
+  text-align: center;
+  height: inherit;
+  line-height: 60px;
+  font-size: 20px;
+}
+
+ul#gameboard {
+  margin: 0 auto;
+  background: #ccc;
+  text-align: center;
+  padding-top: 5px;
+  padding-left: 3px;
+  height: 455px;
+}
+
+ul#gameboard li {
+  margin: 3px;
+  list-style-type: none;
+  width: 142px;
+  height: 142px;
+  float: left;
+  background: #eee;
+  line-height: 150px;
+  color: #999;
+  font-weight: 700;
+  font-size: 30px;
+  border-radius: 5px;
+}
+
+ul#gameboard li.message {
+  background: #555;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+footer {
   text-align: center;
 }

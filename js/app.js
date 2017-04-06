@@ -1,18 +1,19 @@
 $( document ).ready(function() {
   console.log( 'ready!' );
-  //
-  const $start = $('#start');
+  const $start = $('.start');
   const colours = ['red', 'green', 'blue', 'orange', 'yellow'];
   const text = ['RED', 'GREEN', 'BLUE', 'ORANGE', 'YELLOW'];
   let colourArray = [];
   const $timer = $('#timer');
   const $resetBtn = $timer.find('#startAgain');
-  const $timerScreen = $timer.find('.screen');
+  const $timerScreen = $('.timer span');
   let timeRemaining = 10;
+  let level = 0;
   let timerIsRunning = false;
   let timerId;
-  const answerSequence = [];
-
+  let answerSequence = [];
+  // let restart = document.querySelector('#reset');
+  let score = 0;
 
   const coloursObject = {
     'red': 'rgb(255, 0, 0)',
@@ -24,7 +25,14 @@ $( document ).ready(function() {
 
 
   function startGame() {
+    $(this).html('Reset');
+    $(this).one('click', resetGame);
+
+
+    timerIsRunning = false;
     colourArray = [];
+    answerSequence = [];
+    $timerScreen.text(timeRemaining);
     $('.grid').each(function(index) {
       var colour = colours[Math.floor(Math.random() * colours.length)];
       $('.grid').eq(index).css('backgroundColor', '' + colour);
@@ -36,7 +44,7 @@ $( document ).ready(function() {
   }
 
   function timerStart() {
-    if (timerIsRunning) {
+    if (timerIsRunning === true) {
       timerIsRunning = false;
       return clearInterval(timerId);
     } else {
@@ -49,9 +57,14 @@ $( document ).ready(function() {
   function countdownStart() {
     timeRemaining--;
     $timerScreen.text(timeRemaining);
+    console.log(answerSequence);
     if (timeRemaining === 0) {
       clearInterval(timerId);
-      // setTimeout(, 3000);
+      if (answerSequence.length === 0){
+        levelUp();
+      } else {
+        gameOver();
+      }
     }
   }
 
@@ -63,6 +76,7 @@ $( document ).ready(function() {
       let circleColour = $(element).css('background-color');
       if (circleColour === colourToCheck) {
         answerSequence.push($(element).attr('id'));
+        console.log(answerSequence);
       }
     });
     $('body').keypress(squareClicked);
@@ -79,34 +93,45 @@ $( document ).ready(function() {
   }
 
   function squareClicked(e) {
+    console.log('pressed');
     let keyPressed = e.keyCode.toString();
     if (answerSequence.indexOf(keyPressed) > -1) {
-      console.log(answerSequence.indexOf(keyPressed));
+      var index = answerSequence.indexOf(keyPressed);
+      answerSequence.splice(index, 1);
+      $('.score span').text(score += 10);
+      if (answerSequence.length === 0 && timeRemaining === 0) {
+        levelUp();
+      }
     } else {
-      console.log('Game Over');
+      gameOver();
     }
   }
-// how i am going to determine when all the correct keys have been pressed from the array.
 
-// determine what to do if a player presses the wrong key
-function gameOver () {
-
-}
+  function resetGame() {
+    $(this).html('Start');
+    $(this).one('click', startGame);
 
 
-  // When the sequence of colours is created, g
+    clearInterval(timerId);
+    colourArray = [];
+    answerSequence = [];
+    timeRemaining = 10;
+    $timerScreen.text(timeRemaining);
+    $('body').off('keypress', squareClicked);
+    $('li.message').html('?');
+    $('li.grid').css('background-color', '#eee')
+  }
 
-  // function highScore() {
-  //   var score = 0;
-  //   var highscore = localStorage.getItem('highscore');
-  //   if(highscore !== null){
-  //     if (score > highscore) {
-  //       localStorage.setItem('highscore', score);
-  //     }
-  //   } else {
-  //     localStorage.setItem('highscore', score);
-  //   }
-  // }
+  function gameOver () {
+    clearInterval(timerId);
+    colourArray = [];
+    answerSequence = [];
+    timeRemaining = 10;
+    $timerScreen.text(timeRemaining);
+    $('body').off('keypress', squareClicked);
+    $('.screen').text('Game Over');
+  }
+
 
   function resetTimer() {
     clearInterval(timerId);
@@ -116,6 +141,35 @@ function gameOver () {
     $timerScreen;
   }
 
-  $resetBtn.on('click', resetTimer);
-  $start.on('click', startGame);
+  function levelUp()  {
+    level++;
+    $('.screen').text('Level Up!');
+    setTimeout(() => $('.screen').text('Get Ready...'), 1000);
+    levelCheck();
+    $('body').off('keypress', squareClicked);
+  }
+
+  function levelCheck() {
+
+    if (level === 1) {
+      timeRemaining = 8;
+      $timerScreen.text(timeRemaining);
+      setTimeout(startGame, 3000);
+    } else if (level === 2) {
+      timeRemaining = 6;
+      $timerScreen.text(timeRemaining);
+      setTimeout(startGame, 3000);
+    } else if (level === 3) {
+      timeRemaining = 4;
+      $timerScreen.text(timeRemaining);
+      setTimeout(startGame, 3000);
+    } else if (level === 4) {
+      timeRemaining = 2;
+      $timerScreen.text(timeRemaining);
+      setTimeout(startGame, 3000);
+    }
+  }
+
+  // $resetBtn.on('click', resetTimer);
+  $start.one('click', startGame);
 });
