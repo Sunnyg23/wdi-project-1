@@ -16,7 +16,7 @@ $( document ).ready(function() {
   let score = 0;
 
   const coloursObject = {
-    'red': 'rgb(159, 40, 34)',
+    'red': 'rgb(255, 0, 0)',
     'green': 'rgb(0, 128, 0)',
     'yellow': 'rgb(255, 255, 0)',
     'blue': 'rgb(0, 0, 255)',
